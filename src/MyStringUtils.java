@@ -1,10 +1,12 @@
 public class MyStringUtils {
+
     /**
      * Reverses the passed in string
      * @param s the passed in string that will be reversed
      * @return the reversed string
      */
     public static String reverse(String s) {
+        // Create a new string to backwards copy the contents of s
         String newString = "";
         for (int i = s.length() - 1; i >= 0; i--) {
             newString += s.charAt(i);
@@ -18,7 +20,7 @@ public class MyStringUtils {
      * @return true if the string is a palindrome
      */
     public static boolean isPalindrome(String s) {
-        //StringBuilder palindrome = new StringBuilder(s).reverse(); // StringBuilder that reverses word typed.
+        // Create a reverse copy of the string
         String palindrome = MyStringUtils.reverse(s);
 
         if (s.equals(palindrome)) { // Checks equality between words
@@ -34,14 +36,15 @@ public class MyStringUtils {
      * @return the number of vowels in s
      */
     public static int countOfVowels(String s) {
-        int count = 0;
+        // Variable contains the number of vowels
+        int countOfVowels = 0;
         for (int i = 0; i < s.length(); i++) {
             if (s.toLowerCase().charAt(i) == 'a' || s.toLowerCase().charAt(i) == 'e' || s.toLowerCase().charAt(i) == 'i'
                     || s.toLowerCase().charAt(i) == 'o' || s.toLowerCase().charAt(i) == 'u') {
-                count += 1;
+                countOfVowels += 1;
             }
         }
-        return count;
+        return countOfVowels;
     }
 
     /**
@@ -51,6 +54,7 @@ public class MyStringUtils {
      * @return true if main's odd characters equal subString
      */
     public static boolean oddContains(String main, String subString) {
+        // String that contains the odd characters of main
         String oddString = "";
         for (int i = 0; i < main.length(); i++) {
             if (i % 2 == 0) {

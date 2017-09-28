@@ -4,25 +4,29 @@ import org.junit.Test;
 public class MyStringUtilsTest {
     @Test
     public void reverseTest() {
-        String s = "chris";
-        String newString = MyStringUtils.reverse(s);
-        Assert.assertEquals("sirhc", newString);
+        Assert.assertEquals("sirhc", MyStringUtils.reverse("chris"));
+        Assert.assertEquals("esrever", MyStringUtils.reverse("reverse"));
+        Assert.assertEquals("emordnilap", MyStringUtils.reverse("palindrome"));
     }
 
     @Test
     public void isPalindromeTest() {
-        String s = "racecar";
-        Assert.assertTrue(MyStringUtils.isPalindrome(s));
+        Assert.assertTrue(MyStringUtils.isPalindrome("racecar"));
+        Assert.assertTrue(MyStringUtils.isPalindrome("noon"));
+        Assert.assertFalse(MyStringUtils.isPalindrome("music"));
     }
 
     @Test
     public void countOfVowelsTest() {
-        String s = "AUDIOS";
-        Assert.assertEquals(4, MyStringUtils.countOfVowels(s));
+        Assert.assertEquals(4, MyStringUtils.countOfVowels("AUDIOS"));
+        Assert.assertEquals(3, MyStringUtils.countOfVowels("ELLIOT"));
+        Assert.assertEquals(3, MyStringUtils.countOfVowels("CHRISTOPHER"));
     }
 
     @Test
     public void oddContainsTest() {
         Assert.assertTrue(MyStringUtils.oddContains("abcdefg", "aceg"));
+        Assert.assertTrue(MyStringUtils.oddContains("abcdefghi", "acegi"));
+        Assert.assertFalse(MyStringUtils.oddContains("abcdefg", "ab"));
     }
 }
